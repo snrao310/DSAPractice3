@@ -15,12 +15,11 @@ public class FizzBuzzLeetCode {
             else
                 res.add(Integer.toString(i));
         }
-        //return result
         return res;
     }
 
 
-    public static void main(String args[]){
+    public static void main(String[] args){
         System.out.println(fizzBuzz(15));
     }
 
