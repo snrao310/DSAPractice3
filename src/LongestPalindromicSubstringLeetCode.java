@@ -1,4 +1,4 @@
-public class LongestPalindromicSubstring {
+public class LongestPalindromicSubstringLeetCode {
 
     public static String longestPalindrome(String s) {
         int res_len = 0, res_start = 0, res_end = 0;
