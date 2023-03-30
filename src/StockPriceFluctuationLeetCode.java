@@ -1,14 +1,11 @@
 import javafx.util.Pair;
 
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.PriorityQueue;
 
 public class StockPriceFluctuationLeetCode {
 
     static class StockPrice {
-
         int lastTime, curPrice;
         PriorityQueue<Pair<Integer, Integer>> maxHeap;
         PriorityQueue<Pair<Integer, Integer>> minHeap;
@@ -34,7 +31,6 @@ public class StockPriceFluctuationLeetCode {
         public int current() {
             return curPrice;
         }
-
 
         public int maximum() {
             if (maxHeap.size() == 0) return 0;
