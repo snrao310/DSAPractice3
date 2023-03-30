@@ -31,10 +31,10 @@ public class StockPriceFluctuationLeetCode {
             maxHeap.add(new Pair(timestamp, price));
             minHeap.add(new Pair(timestamp, price));
         }
-
         public int current() {
             return curPrice;
         }
+
 
         public int maximum() {
             if (maxHeap.size() == 0) return 0;
