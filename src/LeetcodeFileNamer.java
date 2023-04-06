@@ -1,6 +1,6 @@
 public class LeetcodeFileNamer {
 
-    public static String file_name = "Stock Price Fluctuation";
+    public static String file_name = "Palindromic Substrings";
 
     public static void main(String[] args) {
         file_name = file_name.replaceAll("[^A-Za-z0-9 ]", " ");
