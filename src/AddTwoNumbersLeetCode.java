@@ -7,23 +7,28 @@ public class AddTwoNumbersLeetCode {
     }
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        int carry = 0;
-        ListNode res= new ListNode(0);
-        ListNode res_cur = res;
-        while(l1!=null || l2!=null){
-            int l1_val = (l1==null)?0:l1.val;
-            int l2_val = (l2==null)?0:l2.val;
-            int sum_val = l1_val+l2_val+carry;
-            res_cur.val = sum_val%10;
-            carry = sum_val/10;
-            l1 = (l1==null)?null:l1.next;
-            l2 = (l2==null)?null:l2.next;
-            if(l1!=null || l2!=null) {
-                res_cur.next = new ListNode(0);
-                res_cur = res_cur.next;
-            }else if(carry!=0){
-                res_cur.next = new ListNode(carry);
+        ListNode cur1=l1,cur2=l2;
+        ListNode res= null;
+        ListNode copy = res;
+        int sumCarry = 0;
+        while(cur1!=null || cur2!=null){
+            int cur1val= cur1!=null?cur1.val:0;
+            int cur2val= cur2!=null?cur2.val:0;
+            int sumval = cur1val+cur2val+sumCarry;
+            ListNode sumNode = new ListNode(sumval%10);
+            sumCarry = sumval/10;
+            if(cur1==l1){
+                res = sumNode;
             }
+            else{
+                copy.next = sumNode;
+            }
+            copy = sumNode;
+            cur1 = cur1!=null?cur1.next:null;
+            cur2 = cur2!=null?cur2.next:null;
+        }
+        if(sumCarry!=0){
+            copy.next = new ListNode(sumCarry);
         }
         return res;
     }
