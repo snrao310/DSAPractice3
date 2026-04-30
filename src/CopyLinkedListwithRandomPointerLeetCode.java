@@ -1,5 +1,5 @@
 import java.util.HashMap;
-public class CopyLinkedListwithRandomPointer {
+public class CopyLinkedListwithRandomPointerLeetCode {
     
     static class Node {
         int val;
