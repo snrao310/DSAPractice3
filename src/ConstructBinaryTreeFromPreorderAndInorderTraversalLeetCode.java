@@ -31,11 +31,27 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversalLeetCode {
         return root;
     }
 
+    public static void inOrder(TreeNode root){
+        if(root==null) return;
+        inOrder(root.left);
+        System.out.print(root.val+" ");
+        inOrder(root.right);
+    }
+
+    public static void preOrder(TreeNode root){
+        if(root==null) return;
+        System.out.print(root.val+" ");
+        inOrder(root.left);
+        inOrder(root.right);
+    }
+
     public static void main(String[] args) {
         int[] preorder = {1,2,3,4};
         int[] inorder = {2,1,3,4};
         TreeNode root = buildTree(preorder,inorder);
-        System.out.println(root.val);
+        preOrder(root);
+        System.out.println();
+        inOrder(root);
+        System.out.println();
     }
-    
 }
