@@ -30,6 +30,7 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversalLeetCode {
         }
         return root;
     }
+    
 
     public static void inOrder(TreeNode root){
         if(root==null) return;
