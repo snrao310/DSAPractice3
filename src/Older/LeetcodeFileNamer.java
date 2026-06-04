@@ -1,7 +1,7 @@
 package Older;
 public class LeetcodeFileNamer {
 
-    public static String file_name = "Find Median From Data Stream";
+    public static String file_name = "Minimum Interval to Include Each Query";
 
     public static void main(String[] args) {
         file_name = file_name.replaceAll("[^A-Za-z0-9 ]", " ");
