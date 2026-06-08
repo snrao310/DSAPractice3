@@ -1,7 +1,7 @@
 package Older;
 public class LeetcodeFileNamer {
 
-    public static String file_name = "Minimum Interval to Include Each Query";
+    public static String file_name = "Largest Rectangle In Histogram";
 
     public static void main(String[] args) {
         file_name = file_name.replaceAll("[^A-Za-z0-9 ]", " ");
@@ -12,6 +12,6 @@ public class LeetcodeFileNamer {
             wordArray[0] = Character.toUpperCase(wordArray[0]);
             res+= String.valueOf(wordArray);
         }
-        System.out.println(res+"LeetCode");
+        System.out.println(res+"LeetCode"+".java");
     }
 }
