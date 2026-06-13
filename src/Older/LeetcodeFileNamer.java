@@ -1,7 +1,7 @@
 package Older;
 public class LeetcodeFileNamer {
 
-    public static String file_name = "Search in Rotated Sorted Array";
+    public static String file_name = "Binary Tree Right Side View";
 
     public static void main(String[] args) {
         file_name = file_name.replaceAll("[^A-Za-z0-9 ]", " ");
