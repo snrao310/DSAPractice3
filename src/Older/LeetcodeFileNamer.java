@@ -1,7 +1,7 @@
 package Older;
 public class LeetcodeFileNamer {
 
-    public static String file_name = "Best Time to Buy and Sell Stock with Cooldown";
+    public static String file_name = "Longest Substring Without Repeating Characters";
 
     public static void main(String[] args) {
         file_name = file_name.replaceAll("[^A-Za-z0-9 ]", " ");
