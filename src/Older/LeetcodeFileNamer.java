@@ -1,7 +1,7 @@
 package Older;
 public class LeetcodeFileNamer {
 
-    public static String file_name = "Longest Substring Without Repeating Characters";
+    public static String file_name = "Lowest Common Ancestor in Binary Search Tree";
 
     public static void main(String[] args) {
         file_name = file_name.replaceAll("[^A-Za-z0-9 ]", " ");
