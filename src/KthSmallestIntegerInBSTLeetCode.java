@@ -1,4 +1,4 @@
-public class MergeTripletsToFormTargetLeetCode {
+public class KthSmallestIntegerInBSTLeetCode {
 
     public static class TreeNode {
         int val;
