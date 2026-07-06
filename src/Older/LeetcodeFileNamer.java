@@ -1,7 +1,7 @@
 package Older;
 public class LeetcodeFileNamer {
 
-    public static String file_name = "Kth Smallest Integer in BST";
+    public static String file_name = "Number of Connected Components in an Undirected Graph";
 
     public static void main(String[] args) {
         file_name = file_name.replaceAll("[^A-Za-z0-9 ]", " ");
