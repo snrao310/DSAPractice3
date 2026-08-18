@@ -8,6 +8,15 @@ public class NumberOf1BitsLeetCode {
         }
         return res;
     }
+    
+    public static int hammingWeight2(int n) {
+        int res =0;
+        for(int i=0;i<32;i++){
+            res+= n&1;
+            n=n>>1;
+        }
+        return res;
+    }
 
     public static void main(String[] args) {
         int n = 11;

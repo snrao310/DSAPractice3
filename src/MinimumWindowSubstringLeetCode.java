@@ -3,7 +3,7 @@ import java.util.HashSet;
 
 public class MinimumWindowSubstringLeetCode {
 
-    public static String minWindow(String s, String t) {
+    public static String minWindowOld(String s, String t) {
         if (s.length() < t.length())
             return "";
         HashMap<Character, Integer> countMap = new HashMap<>();
@@ -50,6 +50,66 @@ public class MinimumWindowSubstringLeetCode {
             return "";
         return s.substring(minl, minr + 1);
     }
+
+    public static String minWindow(String s, String t) {
+        int found = 0, i = 0, l = 0, r = 0, slen = s.length(), tlen = t.length();
+        char[] st = s.toCharArray(), tt = t.toCharArray();
+        int[] freq = new int[60];
+    HashSet<Character> tset = new HashSet<>();
+    for (char c : tt) {
+            freq[c - 'A']++;
+            tset.add(c);
+        }
+        while (i<slen && !tset.contains(st[i])) i++;
+        if (i == slen)
+            return "";
+        l = i;
+        r = i;
+        freq[st[i] - 'A']--;
+        found = 1;
+        int minLen = Integer.MAX_VALUE, minl=0,minr=0;
+        while (r < slen && l< slen) {
+            while (found != tlen && r < slen-1) {
+                r++;
+                if (tset.contains(st[r])) {
+                    freq[st[r] - 'A']--;
+                    if (freq[st[r] - 'A'] >= 0)
+                        found++;
+                }
+            }
+            if (found == tlen){
+                int len = r - l + 1;
+                if(len<minLen){
+                    minLen = len;
+                    minl=l;
+                    minr=r;
+                }
+            }
+            if (r == slen-1 && found != tlen)
+                break;
+            while (l < r && (!tset.contains(st[l]) || freq[st[l]-'A']<0)) {
+                if(tset.contains(st[l])){
+                    freq[st[l]-'A']++;
+                }
+                l++;
+            }
+            if (found == tlen){
+                int len = r - l + 1;
+                if(len<minLen){
+                    minLen = len;
+                    minl=l;
+                    minr=r;
+                }
+                freq[st[l] - 'A']++;
+                found--;
+                l++;
+            }
+        }
+        if(minLen==Integer.MAX_VALUE) return "";
+        return s.substring(minl,minr+1);
+    }
+
+
 
     public static void main(String[] args) {
         String s = "ab";
